@@ -1,0 +1,10 @@
+export { default as TotalSalesWidget } from "./TotalSalesWidget";
+export { default as TotalRepairsWidget } from "./TotalRepairsWidget";
+export { default as TotalCustomersWidget } from "./TotalCustomersWidget";
+export { default as TotalRevenueWidget } from "./TotalRevenueWidget";
+export { default as ProtectionPlansWidget } from "./ProtectionPlansWidget";
+export { default as RepairsDetailsWidget } from "./RepairsDetailsWidget";
+export { default as RepairsStatusWidget } from "./RepairsStatusWidget";
+export { default as TeamMembersWidget } from "./TeamMembersWidget";
+export { default as ClaimsByDeviceWidget } from "./ClaimsByDeviceWidget";
+export { default as PlansByDeviceWidget } from "./PlansByDeviceWidget";

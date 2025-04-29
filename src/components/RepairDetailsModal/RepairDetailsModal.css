@@ -1,0 +1,505 @@
+.repair-details-modal.device-details-modal {
+  /* Modal styles */
+  .ant-modal-content {
+    padding: 24px;
+  }
+
+  .ant-modal-close {
+    top: 24px;
+    right: 24px;
+  }
+
+  .modal-content {
+    padding: 8px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Header styles */
+  .device-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 0;
+
+    .device-info {
+      .device-brand {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .device-id-tag {
+        display: inline-block;
+        background-color: #e8f3ff;
+        color: #38b6ff;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      margin-right: 0;
+    }
+  }
+
+  /* Info grid styles */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 0;
+
+    .info-card {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background-color: #dbebff;
+      border: 1px solid #97c4ff;
+
+      .info-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #97c4ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #004aad;
+      }
+
+      .info-content {
+        h4 {
+          color: #666;
+          font-size: 14px;
+          margin-bottom: 6px;
+        }
+
+        p {
+          font-size: 14px;
+          margin: 0;
+          line-height: 1.4;
+          font-weight: 600;
+
+          &.subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  /* Date section styles */
+  .date-section {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    .date-item {
+      text-align: center;
+
+      .label {
+        display: block;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      .value {
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .date-timeline {
+      flex: 1;
+      margin: 0 24px;
+
+      .timeline-line {
+        height: 1px;
+        background: #ccc;
+        position: relative;
+        border-top: 1px dashed #ccc;
+      }
+    }
+  }
+
+  /* Issues section styles */
+  .issues-section {
+    margin-bottom: 24px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .issues-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .issue-tag {
+      background: #d7f0ff;
+      color: #004aad;
+      padding: 4px 12px;
+      font-size: 14px;
+    }
+  }
+
+  /* Claims section styles */
+  .claims-section {
+    margin-bottom: 24px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .claims-table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        background: #f8fafc;
+      }
+
+      th {
+        color: #666;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      tfoot td {
+        text-align: right;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* Description section styles */
+  .description-section {
+    margin-bottom: 24px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .description-item {
+      margin-bottom: 16px;
+
+      h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: #38b6ff;
+        font-size: 14px;
+        margin: 0;
+        background: #f8fafc;
+        padding: 12px;
+      }
+    }
+  }
+
+  /* Repair history styles */
+  .repair-history {
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .history-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .history-label {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .history-issues {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #38b6ff;
+    }
+
+    .history-date {
+      color: #38b6ff;
+      text-align: center;
+    }
+  }
+}
+
+.repair-details-modal .modal-content {
+  padding: 24px;
+}
+
+.repair-details-modal .close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #000;
+}
+
+.repair-details-modal .device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .device-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repair-details-modal .device-id {
+  color: #666;
+  font-size: 14px;
+}
+
+.repair-details-modal .device-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.repair-details-modal .device-id-secondary {
+  color: #38b6ff;
+  font-size: 14px;
+}
+
+.repair-details-modal .device-icon {
+  background: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repair-details-modal .info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: #f8fafc;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repair-details-modal .info-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.repair-details-modal .info-value {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.repair-details-modal .issues-section {
+  margin-bottom: 24px;
+}
+
+.repair-details-modal h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.repair-details-modal .issues-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.repair-details-modal .issue-tag {
+  background: #d7f0ff;
+  color: #004aad;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.repair-details-modal .contact-info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .info-box {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  background: #d7f0ff;
+  padding: 16px;
+  border-color: #97c4ff;
+}
+
+.repair-details-modal .info-icon {
+  font-size: 24px;
+  color: #666;
+}
+
+.repair-details-modal .info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repair-details-modal .info-title {
+  color: #666;
+  font-size: 14px;
+}
+
+.repair-details-modal .info-detail {
+  font-weight: 500;
+}
+
+.repair-details-modal .company-name,
+.repair-details-modal .phone-number {
+  color: #666;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.repair-details-modal .dates-section {
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .date-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.repair-details-modal .date-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.repair-details-modal .date-value {
+  font-weight: 500;
+}
+
+.repair-details-modal .date-divider {
+  border-top: 1px dashed #ccc;
+  margin: 8px 0;
+}
+
+.repair-details-modal .claims-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .claims-table th,
+.repair-details-modal .claims-table td {
+  padding: 12px;
+  text-align: left;
+  background: #f8fafc;
+}
+
+.repair-details-modal .claims-table th {
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.repair-details-modal .claims-table tfoot td {
+  text-align: right;
+  font-weight: 500;
+}
+
+.repair-details-modal .description-section {
+  margin-bottom: 24px;
+}
+
+.repair-details-modal .description-item {
+  margin-bottom: 16px;
+}
+
+.repair-details-modal .description-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.repair-details-modal .description-item p {
+  color: #38b6ff;
+  font-size: 14px;
+  margin: 0;
+  background: #f8fafc;
+  padding: 12px;
+}
+
+.repair-details-modal .repair-history {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+.repair-details-modal .history-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.repair-details-modal .history-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.repair-details-modal .history-issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #38b6ff;
+}
+
+.repair-details-modal .history-date {
+  color: #38b6ff;
+  text-align: center;
+}

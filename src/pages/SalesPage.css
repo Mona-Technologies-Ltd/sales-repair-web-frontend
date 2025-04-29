@@ -1,0 +1,175 @@
+.sales-page {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.sales-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: transparent;
+}
+
+.search-filters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-input {
+  width: 300px;
+  height: 45px;
+}
+
+.status-select {
+  width: 200px;
+}
+
+.date-print-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 300px;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.date-range span {
+  color: #666;
+  font-size: 14px;
+}
+
+.date-picker {
+  width: 300px;
+  height: 45px;
+}
+
+.print-button {
+  height: 45px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0066cc;
+  border-color: #0066cc;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.print-button:hover {
+  background: #0052a3;
+  border-color: #0052a3;
+}
+
+.grid-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #e6e8eb;
+  padding: 24px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .sales-page-header {
+    padding: 20px;
+  }
+
+  .search-filters {
+    min-width: 250px;
+  }
+
+  .search-input,
+  .date-picker {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sales-page {
+    padding: 16px;
+  }
+
+  .sales-page-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .search-filters {
+    flex-direction: column;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .search-input,
+  .status-select {
+    width: 100%;
+  }
+
+  .date-print-section {
+    flex-direction: column;
+    width: 100%;
+    min-width: unset;
+    gap: 16px;
+  }
+
+  .date-range {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .date-picker {
+    width: 100%;
+  }
+
+  .print-button {
+    width: 100%;
+  }
+
+  .grid-container {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sales-page {
+    padding: 12px;
+  }
+
+  .sales-page-header,
+  .grid-container {
+    padding: 12px;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .sales-page-header {
+    flex-direction: column;
+  }
+
+  .search-filters {
+    width: 100%;
+  }
+
+  .date-print-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

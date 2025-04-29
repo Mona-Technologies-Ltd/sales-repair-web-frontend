@@ -1,0 +1,35 @@
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.edit-button,
+.close-account-button {
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 180px;
+}
+
+.edit-button {
+  background-color: #38b6ff;
+  color: white;
+  border: none;
+}
+
+.edit-button:hover {
+  background-color: #2a8fd8;
+}
+
+.close-account-button {
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  margin-right: 180px;
+}
+
+.close-account-button:hover {
+  background-color: #fff1f1;
+}

@@ -1,0 +1,199 @@
+.profile-container {
+  width: 100%;
+  padding: 24px;
+}
+
+.profile-content {
+  display: flex;
+  gap: 24px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.profile-info-card {
+  flex: 1;
+  background: white;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.status-card {
+  flex: 1;
+  background: white;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.status-card h2 {
+  margin: 0 0 24px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.status-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status-item {
+  padding: 16px;
+  flex: 1;
+}
+
+/* Specific background colors for each status item */
+.status-item:nth-child(1) {
+  background-color: #d7f0ff;
+}
+
+.status-item:nth-child(2) {
+  background-color: #e8f2ff;
+}
+
+.status-item:nth-child(3) {
+  background-color: rgba(222, 231, 255, 0.35);
+}
+
+.status-label {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.status-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.date-joined .status-value.highlight {
+  color: #1890ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .profile-content {
+    gap: 16px;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-details h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 16px;
+  }
+
+  .profile-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .profile-info-card,
+  .status-card {
+    width: 100%;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info-item {
+    justify-content: center;
+  }
+
+  .status-grid {
+    flex-direction: column;
+  }
+
+  .status-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 12px;
+  }
+
+  .profile-content {
+    gap: 16px;
+  }
+
+  .profile-info-card,
+  .status-card {
+    padding: 16px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-details h2 {
+    font-size: 18px;
+  }
+
+  .status-card h2 {
+    font-size: 18px;
+  }
+
+  .status-value {
+    font-size: 20px;
+  }
+
+  .info-item {
+    font-size: 14px;
+  }
+}
