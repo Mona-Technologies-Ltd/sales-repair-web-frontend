@@ -42,13 +42,13 @@
   align-self: flex-start;
 }
 .summary-card-title2 {
-  width: 100%;font-size: 14px;
+  width: 40%;font-size: 14px;
   color: #666;
   margin-bottom: 8px;
   align-self: flex-start;
 }
-#repairs_title_card{
-  width: 100%;font-size: 14px;
+.repairs_title_card{
+  width: 60%;font-size: 14px;
   color: #666;
   margin-bottom: 8px;
   align-self: flex-start;  

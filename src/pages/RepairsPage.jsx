@@ -225,7 +225,7 @@ const RepairsPage = () => {
                     : card.title === 'Approved for Repair'
                       ? 'repairs_title_card'
                       : 'summary-card-title1'
-                }`} id={card.title === 'Approved for Repair' ? 'repairs_title_card' : ''}>
+                }`}>
                 {card.title}
             </div>  
 
