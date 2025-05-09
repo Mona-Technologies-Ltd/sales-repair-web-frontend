@@ -17,464 +17,344 @@ export const printSalesReport = (reportData) => {
   // Write the initial HTML with all necessary styles
   printWindow.document.write(`
     <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Sales Report - Mona Protect</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-        <style>
-          body {
-            margin: 0;
-            padding: 0;
-            background: white;
-            font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
-          }
-          
-          .print-container {
-            padding: 40px;
-            background: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-          }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sales Report</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-          .header {
-            background-color: #0052CC;
-            color: white;
-            padding: 16px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 32px;
-          }
+    body {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+    }
 
-          .report-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 40px;
-          }
+    .report-container {
+      border: 1px solid #ccc;
+      max-width: 800px;
+      margin: auto;
+    }
 
-          .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-          }
+    .report-header {
+      background-color:#004AAD;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-          .company-info {
-            text-align: right;
-          }
+    .top-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 20px 20px;
+      align-items: flex-start;
+    }
 
-          .company-info h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-          }
+    .left-section img {
+      height: 40px;
+      margin-bottom: 10px;
+    }
 
-          .company-info p {
-            margin: 4px 0;
-            color: #666;
-          }
+    .right-section {
+      text-align: right;
+    }
 
-          .meta-section {
-            margin-bottom: 40px;
-          }
+    .right-section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
 
-          .meta-row {
-            display: flex;
-            margin-bottom: 8px;
-            font-size: 14px;
-          }
+    .right-section p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-          .meta-label {
-            width: 120px;
-            color: #666;
-          }
+    .report-details {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 10px;
+    }
 
-          .meta-value {
-            font-weight: 500;
-          }
+    .report-details span {
+      font-weight: bold;
+    }
 
-          .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-          }
+    .section {
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
 
-          .overview-grid {
-            display: grid;
-            gap: 12px;
-            margin-bottom: 32px;
-          }
+    .section h3 {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
 
-          .overview-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 16px;
-            background-color: #F8FAFC;
-          }
+    .section p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
 
-          .overview-label {
-            color: #666;
-            font-size: 14px;
-          }
+    .repairs-highlight table {
+      width: 100%;
 
-          .overview-value {
-            font-weight: 500;
-          }
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 10px;
+    }
 
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 32px;
-            font-size: 14px;
-          }
+    .repairs-highlight th, .repairs-highlight td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
 
-          th {
-            background-color: #F8FAFC;
-            color: #666;
-            padding: 12px 16px;
-            text-align: left;
-            font-weight: normal;
-          }
+    .repairs-highlight th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+.repairs-highlight th, .repairs-highlight td {
+  border: none; /* removed border */
+  padding: 12px;
+  text-align: center;
+}.repairs-highlight table {
+  width: 100%;
+  border-collapse: separate; /* Use separate to allow box shadows on cells */
+  border-spacing: 0 10px; /* Add spacing between rows if desired */
+  font-size: 14px;
+  margin-top: 10px;
+}
 
-          td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #E5E7EB;
-          }
+.repairs-highlight th,
+.repairs-highlight td {
+  border: none;
+  text-align: center;
+  padding: 12px;
+}
 
-          .status-badge {
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: 500;
-            display: inline-block;
-          }
+.repairs-highlight td {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for each cell */
+}
 
-          .status-badge.paid {
-            background-color: #E8F5E9;
-            color: #2E7D32;
-          }
+.repairs-highlight th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
 
-          .status-badge.awaiting {
-            background-color: #FFF8E1;
-            color: #F57C00;
-          }
 
-          .date-range {
-            display: flex;
-            justify-content: flex-end;
-            gap: 24px;
-            margin-bottom: 16px;
-            font-size: 14px;
-          }
+    .repairs-info {
+      margin-top: 20px;
+    }
 
-          .date-range-text {
-            color: #666;
-          }
+    .repairs-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 10px;
+    }
 
-          .footer {
-            margin-top: 40px;
-            border-top: 1px solid #E5E7EB;
-            padding-top: 16px;
-          }
+    .repairs-info th, .repairs-info td {
+      border: 1px solid #eee;
+      padding: 10px;
+      text-align: left;
+    }
 
-          .footer-text {
-            color: #666;
-            font-size: 12px;
-            text-align: center;
-            margin-bottom: 4px;
-          }
+    .repairs-info thead {
+      background-color: #f5f5f5;
+    }
+.repairs-info table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
 
-          .action-buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-            justify-content: flex-end;
-          }
+.repairs-info th, .repairs-info td {
+  border: none;
+  padding: 12px;
+  text-align: left;
+}
 
-          .action-button {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 14px;
-            transition: all 0.2s;
-          }
+.repairs-info td {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for each cell */
+}
 
-          .print-button {
-            background-color: #0052CC;
-            color: white;
-          }
+.repairs-info thead {
+  background-color: #f5f5f5;
+}
 
-          .download-button {
-            background-color: #2E7D32;
-            color: white;
-          }
+    .status-paid {
+      background-color: #E0FFED;
+      color: #00752F;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
 
-          .action-button:hover {
-            opacity: 0.9;
-          }
+    .status-pending {
+      background-color: #FFB82E26;
+      color: #FFB82E;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
 
-          @media print {
-            body {
-              margin: 0;
-              padding: 0;
-            }
-            
-            @page {
-              size: A4;
-              margin: 20mm;
-            }
+    .footer {
+      font-size: 12px;
+      padding: 15px 20px;
+      border-top: 1px solid #eee;
+      text-align: center;
+      line-height: 1.6;
+      color: #555;
+    }
 
-            .print-container {
-              max-width: none;
-              box-shadow: none;
-              padding: 0;
-            }
+    .repairs-info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
 
-            .header {
-              -webkit-print-color-adjust: exact;
-              print-color-adjust: exact;
-            }
+    .repairs-info-header h3 {
+      margin: 0;
+    }
 
-            .status-badge {
-              -webkit-print-color-adjust: exact;
-              print-color-adjust: exact;
-            }
+    .date-range {
+      display: flex;
+      gap: 40px;
+      text-align: center;
+    }
 
-            .action-buttons {
-              display: none !important;
-            }
-          }
-        </style>
-      </head>
-      <body>
-        <div class="print-container">
-          <div class="action-buttons">
-            <button class="action-button print-button" onclick="window.print()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                <path d="M6 14h12v8H6z"/>
-              </svg>
-              Print
-            </button>
-            <button class="action-button download-button" onclick="window.downloadPDF()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              Download PDF
-            </button>
+    .date-block {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .date-block span {
+      display: block;
+      font-weight: normal;
+      margin-top: 4px;
+      text-transform: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <div class="report-header">Sales Report</div>
+
+    <div class="top-section">
+      <div class="left-section">
+          <img src="${monaHeaderLogo}" alt="Mona Protect Logo" />
+        <div class="report-details">
+          <p><span>Report ID:</span> RPT123456</p>
+          <p><span>Generated by:</span> Admin 1/Michael James</p>
+          <p><span>Generated on:</span> 2025-01-15 16:09:05</p>
+          <p><span>Version:</span> 1.0</p>
+        </div>
+      </div>
+      <div class="right-section">
+        <h2>Sales Report</h2>
+        <p>Mona Technologies Limited<br/>
+        613 Ahmadu Bello Way, Abuja<br/>
+        +234 903 345 6789<br/>
+        info@monaprotect.com</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Overview</h3>
+      <p>Total No. of Devices: <strong>10</strong></p>
+      <p>Total Cost of Repairs: <strong>₦100,000</strong></p>
+      <p>Total Cost of Repairs paid: <strong>₦50,000</strong></p>
+      <p>Total Cost of Repairs awaiting: <strong>₦50,000</strong></p>
+    </div>
+
+    <div class="section repairs-highlight">
+      <h3>Highlight of Sales</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Devices</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Damaged screen</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Not Charging</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section repairs-info">
+      <div class="repairs-info-header">
+        <h3>Sales Information</h3>
+        <div class="date-range">
+          <div class="date-block">
+            FROM
+            <span>Jan. 22TH 2024</span>
           </div>
-          <div class="header">Sales Report</div>
-
-          <div class="report-header">
-            <div class="logo-container">
-              <img src="${monaHeaderLogo}" alt="Mona Protect Logo" />
-            </div>
-            <div class="company-info">
-              <h1>Sales Report</h1>
-              <h1>Mona Technologies Limited</h1>
-              <p>613 Ahmadu Bello Way, Abuja</p>
-              <p>+234 903 345 6789</p>
-              <p>info@monaprotect.com</p>
-            </div>
-          </div>
-
-          <div class="meta-section">
-            <div class="meta-row">
-              <span class="meta-label">Report ID:</span>
-              <span class="meta-value">${
-                reportData?.reportId || "RPT123456"
-              }</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Generated by:</span>
-              <span class="meta-value">${
-                reportData?.generatedBy || "Admin 1/Michael James"
-              }</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Generated on:</span>
-              <span class="meta-value">${
-                reportData?.generatedOn || "2025-01-15 16:09:05"
-              }</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Version:</span>
-              <span class="meta-value">${reportData?.version || "1.0"}</span>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="section-title">Overview</h2>
-            <div class="overview-grid">
-              <div class="overview-item">
-                <label class="overview-label">Total No. of Devices:</label>
-                <span class="overview-value">${
-                  reportData?.totalDevices || "10"
-                }</span>
-              </div>
-              <div class="overview-item">
-                <label class="overview-label">Total Commission Earned:</label>
-                <span class="overview-value">₦${
-                  reportData?.totalCommissionEarned || "100,000"
-                }</span>
-              </div>
-              <div class="overview-item">
-                <label class="overview-label">Total Commission Received:</label>
-                <span class="overview-value">₦${
-                  reportData?.totalCommissionReceived || "50,000"
-                }</span>
-              </div>
-              <div class="overview-item">
-                <label class="overview-label">Total Commission Awaiting:</label>
-                <span class="overview-value">₦${
-                  reportData?.totalCommissionAwaiting || "50,000"
-                }</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="section-title">Highlight of Sales</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>S/N</th>
-                  <th>Device</th>
-                  <th>Count</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${(
-                  reportData?.highlights || [
-                    { device: "iPhone 13 Pro MAX", count: 5 },
-                    { device: "Samsung Galaxy S21", count: 3 },
-                  ]
-                )
-                  .map(
-                    (item, index) => `
-                  <tr>
-                    <td>${String(index + 1).padStart(2, "0")}</td>
-                    <td>${item.device}</td>
-                    <td>${item.count}</td>
-                  </tr>
-                `
-                  )
-                  .join("")}
-              </tbody>
-            </table>
-          </div>
-
-          <div>
-            <h2 class="section-title">Sales Information</h2>
-            <div class="date-range">
-              <span class="date-range-text">From: ${
-                reportData?.dateRange?.from || "Jan. 22TH 2024"
-              }</span>
-              <span class="date-range-text">To: ${
-                reportData?.dateRange?.to || "Dec. 22TH 2024"
-              }</span>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Device Model</th>
-                  <th>Brand</th>
-                  <th>Commission</th>
-                  <th>Status</th>
-                  <th>Team Member</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${(
-                  reportData?.salesInfo || [
-                    {
-                      deviceModel: "iPhone 13 Pro MAX",
-                      brand: "Apple",
-                      commission: "25,000",
-                      status: "Paid",
-                      teamMember: "John Doe",
-                      date: "2025-01-15",
-                    },
-                    {
-                      deviceModel: "Galaxy S21",
-                      brand: "Samsung",
-                      commission: "20,000",
-                      status: "Awaiting",
-                      teamMember: "Jane Smith",
-                      date: "2025-01-15",
-                    },
-                  ]
-                )
-                  .map(
-                    (sale) => `
-                  <tr>
-                    <td>${sale.deviceModel}</td>
-                    <td>${sale.brand}</td>
-                    <td>₦${sale.commission}</td>
-                    <td>
-                      <span class="status-badge ${sale.status.toLowerCase()}">
-                        ${sale.status}
-                      </span>
-                    </td>
-                    <td>${sale.teamMember}</td>
-                    <td>${sale.date}</td>
-                  </tr>
-                `
-                  )
-                  .join("")}
-              </tbody>
-            </table>
-          </div>
-
-          <div class="footer">
-            <p class="footer-text">
-              Generated on: ${
-                reportData?.generatedOn || "2025-01-15 16:30"
-              } | Page 1 of 1 | Report ID: ${
-    reportData?.reportId || "RPT123456"
-  } | Mona Protect
-            </p>
-            <p class="footer-text">Confidential – For internal use only</p>
+          <div class="date-block">
+            TO
+            <span>Dec. 22TH 2024</span>
           </div>
         </div>
-        <script>
-          window.downloadPDF = function() {
-            const element = document.querySelector('.print-container');
-            const opt = {
-              margin: 10,
-              filename: 'sales-report-${Date.now()}.pdf',
-              image: { type: 'jpeg', quality: 0.98 },
-              html2canvas: { scale: 2 },
-              jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-              pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-            };
-            // Hide action buttons before generating PDF
-            const actionButtons = element.querySelector('.action-buttons');
-            if (actionButtons) {
-              actionButtons.style.display = 'none';
-            }
-            html2pdf().set(opt).from(element).save().then(() => {
-              // Restore action buttons after PDF generation
-              if (actionButtons) {
-                actionButtons.style.display = 'flex';
-              }
-            });
-          };
-        </script>
-      </body>
-    </html>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Device model</th>
+            <th>Brand</th>
+            <th>Commission</th>
+            <th>Status</th>
+            <th>Team Member</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#0001</td>
+            <td>Samsung</td>
+            <td>₦123,345</td>
+            <td><span class="status-paid">Paid</span></td>
+            <td>Admin 1</td>
+            <td>2025-01-15</td>
+          </tr>
+          <tr>
+            <td>#0001</td>
+            <td>Samsung</td>
+            <td>₦123,345</td>
+            <td><span class="status-pending">Pending</span></td>
+            <td>Admin 1</td>
+            <td>2025-01-15</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      Generated on: 2025–01–15 16:30 | Page 1 of 1 | Report ID: RPT123456 | Mona Protect<br/>
+      Confidential – For internal use only
+    </div>
+  </div>
+</body>
+</html>
   `);
 
   // Print after everything is loaded
@@ -834,7 +714,6 @@ export const printRepairsReport = (reportData) => {
   </div>
 </body>
 </html>
-
   `);
 
   // Print after everything is loaded
