@@ -104,6 +104,7 @@ const Branches = () => {
         {branches.map((branch) => (
           <div key={branch.id} className="branch-card">
             <div className="branch-content">
+              <img src="/b_bracnch_img.svg" className="b_bracnch_img" />
               <div className="branch-details">
                 <div className="branch-city">{branch.city}</div>
                 <div className="branch-area">{branch.area}</div>

@@ -4,24 +4,24 @@ import { Card } from "antd";
 const RepairsStatusWidget = ({ data }) => {
   const statusItems = [
     {
-      label: "Awaiting Approval",
+      label: "Pending Approval",
       count: data?.awaitingApproval || 0,
-      color: "orange",
+      color: "#EEA10D",
     },
     {
       label: "Approved for Repairs",
       count: data?.approvedForRepairs || 0,
-      color: "blue",
+      color: "#004AAD",
     },
     {
       label: "Completed Repairs",
       count: data?.completedRepairs || 0,
-      color: "green",
+      color: "#00752F",
     },
     {
       label: "Rejected Repairs",
       count: data?.rejectedRepairs || 0,
-      color: "red",
+      color: "#FF4602",
     },
   ];
 

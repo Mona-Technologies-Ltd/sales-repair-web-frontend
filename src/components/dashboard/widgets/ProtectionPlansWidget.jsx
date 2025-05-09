@@ -1,12 +1,13 @@
 import React from "react";
 import { Card, Row, Col } from "antd";
 import { Icon } from "@iconify/react";
+// import SalesPayoutCard from "./SalesPayoutCard";
 
 const ProtectionPlansWidget = ({ data }) => {
   const isPositive = (data?.plansGrowth || 0) >= 0;
 
   return (
-    <Card className="dashboard-stats-card protection-plans-card">
+    <Card className="dashboard-stats-card protection-plans-card" >
       <div className="stat-header">
         <div className="stat-title">
           Total Protection Plans Sold
@@ -23,26 +24,29 @@ const ProtectionPlansWidget = ({ data }) => {
         </div>
       </div>
 
-      <div className="payout-section">
-        <Row>
+      <div className="payout-section" id="pay-sec">
+        {/* <Row>
           <Col span={8} className="payout-left">
             <div className="payout-title">Pending Sales Payout</div>
             <div className="payout-value">{data?.pendingSales || 0}</div>
           </Col>
-          <Col span={4} className="payout-amount-box">
+          <Col span={3} className="payout-amount-box">
             <div className="amount-label">Amount</div>
             <div className="amount-value">
               ₦{data?.pendingSalesAmount?.toLocaleString() || 0}
             </div>
           </Col>
-          <Col span={12} className="payout-right">
+          <Col span={10} className="payout-right">
             <div className="payout-title">Received Sales payout</div>
             <div className="payout-received-amount">
               ₦{data?.receivedSalesAmount?.toLocaleString() || 0}
             </div>
           </Col>
-        </Row>
+        </Row> */}
+         <SalesPayoutCard />
       </div>
+
+
     </Card>
   );
 };

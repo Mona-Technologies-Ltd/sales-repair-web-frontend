@@ -1,3 +1,4 @@
+import { HiOutlineLocationMarker } from "react-icons/hi"; 
 import React from "react";
 import { Card, Row, Col, Avatar, Button } from "antd";
 import { Icon } from "@iconify/react";
@@ -10,11 +11,16 @@ const TeamMemberCard = ({ member }) => {
         <div>
           <div className="member-name">{member.name}</div>
           <div className="member-location">
-            <Icon
+            {/* <Icon
               icon="mdi:map-marker"
               width={16}
               height={16}
               color="#1890ff"
+            /> */}
+            <HiOutlineLocationMarker
+                icon="mdi:map-marker"
+                width={16}
+                height={16}
             />
             {member.location}
           </div>
@@ -22,18 +28,19 @@ const TeamMemberCard = ({ member }) => {
       </div>
 
       <div className="member-stats">
-        <div className="stat-group">
+        <div className="stat-group stat-group-1">
           <div className="stat-label">Plans Sold</div>
-          <div className="stat-value">{member.plansSold}</div>
+          <div className="stats-value">{member.plansSold}</div>
           <div className="stat-amount sales">
-            Amount ₦{member.plansAmount?.toLocaleString() || 0}
+          <div>Amount</div> <span>₦{member.plansAmount?.toLocaleString() || 0}</span>
+
           </div>
         </div>
-        <div className="stat-group">
+        <div className="stat-group stat-group-2">
           <div className="stat-label">Repairs Completed</div>
-          <div className="stat-value">{member.repairsCompleted}</div>
+          <div className="stats-value">{member.repairsCompleted}</div>
           <div className="stat-amount repairs">
-            Amount ₦{member.repairsAmount?.toLocaleString() || 0}
+            <div>Amount</div> <span>₦{member.repairsAmount?.toLocaleString() || 0}</span>
           </div>
         </div>
       </div>

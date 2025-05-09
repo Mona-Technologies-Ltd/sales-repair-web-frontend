@@ -4,7 +4,8 @@ import "./BusinessInformation.css";
 
 const BusinessInformation = () => {
   const [businessInfo] = useState({
-    businessName: "John Doe",
+    name: "John Doe",
+    businessName: "Royal Tech Company",
     address: "Guzape 24231, Abuja F.C.T",
     phoneNumber: "0814 224 4432",
     teamMembers: "24",
@@ -47,11 +48,11 @@ const BusinessInformation = () => {
                 fontWeight: "500",
               }}
             >
-              {businessInfo.businessName[0]}
+              {businessInfo.name[0]}
             </div>
           </div>
           <div className="profile-details">
-            <h2>{businessInfo.businessName}</h2>
+            <h2>{businessInfo.name}</h2>
             <span className="role-badge">Sale Partner</span>
           </div>
         </div>
@@ -67,29 +68,35 @@ const BusinessInformation = () => {
             </div>
           </div>
 
+          {/* <div className="info-group" data-field="teamMembers">
+            <label className="info-label">Team members</label>
+            <div className="info-value">
+              <div className="static-text">{businessInfo.teamMembers}</div>
+            </div>
+          </div> */}
           <div className="info-group" data-field="teamMembers">
+            <label className="info-label">Phone Number</label>
+            <div className="info-value">
+              <div className="static-text">{businessInfo.phoneNumber}</div>
+            </div>
+          </div> 
+
+          <div className="info-group" data-field="phoneNumber">
             <label className="info-label">Team members</label>
             <div className="info-value">
               <div className="static-text">{businessInfo.teamMembers}</div>
             </div>
           </div>
 
-          <div className="info-group" data-field="phoneNumber">
-            <label className="info-label">Phone Number</label>
-            <div className="info-value">
-              <div className="static-text">{businessInfo.phoneNumber}</div>
-            </div>
-          </div>
-
           {/* Right-aligned fields */}
-          <div className="info-group" data-field="address">
+          <div className="info-group" id="info-right" data-field="address">
             <label className="info-label">Address</label>
             <div className="info-value">
               <div className="static-text">{businessInfo.address}</div>
             </div>
           </div>
 
-          <div className="info-group" data-field="businessType">
+          <div className="info-group info-right" data-field="businessType">
             <label className="info-label">Business Type</label>
             <div className="info-value">
               <div className="business-type-tag">
@@ -98,7 +105,7 @@ const BusinessInformation = () => {
             </div>
           </div>
 
-          <div className="info-group" data-field="registrationNumber">
+          <div className="info-group info-right" data-field="registrationNumber">
             <label className="info-label">Business Registration Number</label>
             <div className="info-value">
               <div className="static-text">

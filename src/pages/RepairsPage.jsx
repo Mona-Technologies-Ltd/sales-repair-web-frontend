@@ -26,7 +26,7 @@ const RepairsPage = () => {
       amount: "25000.00",
       status:
         index % 5 === 0
-          ? "Awaiting"
+          ? "Pending"
           : index % 5 === 1
           ? "Approved"
           : index % 5 === 2
@@ -163,15 +163,15 @@ const RepairsPage = () => {
       count: 2,
       amount: "105,000",
       icon: "qlementine-icons:tool-24",
-      iconBg: "#FFF1CE",
-      iconColor: "#E3A405",
+      iconBg: "#FFB82E26",
+      iconColor: "#FFB82E",
     },
     {
       title: "Approved for Repair",
       count: 12,
       amount: "105,000",
       icon: "qlementine-icons:tool-24",
-      iconBg: "#DBEBFF",
+      iconBg: "#DCEBFF",
       iconColor: "#004AAD",
     },
     {
@@ -179,7 +179,7 @@ const RepairsPage = () => {
       count: 120,
       amount: "105,000",
       icon: "qlementine-icons:tool-24",
-      iconBg: "#DBEBFF",
+      iconBg: "#DBEBFF73",
       iconColor: "#38B6FF",
     },
     {
@@ -187,16 +187,16 @@ const RepairsPage = () => {
       count: 115,
       amount: "105,000",
       icon: "qlementine-icons:tool-24",
-      iconBg: "#E3FFE3",
-      iconColor: "#439F6E",
+      iconBg: "#E0FFED",
+      iconColor: "#00752F",
     },
     {
       title: "Rejected Repairs",
       count: 30,
       amount: "105,000",
       icon: "qlementine-icons:tool-24",
-      iconBg: "#FFE3E6",
-      iconColor: "#E52626",
+      iconBg: "#FFE5DB",
+      iconColor: "#FF4602",
     },
   ];
 
@@ -218,7 +218,7 @@ const RepairsPage = () => {
                   height="15"
                 />
               </div>
-              <div className="summary-card-title">{card.title}</div>
+              <div className={card.title == 'Paid Repairs'  || card.title == 'Rejected Repairs' || card.title == 'Approved for Repair' || card.title == 'Completed Repairs' ? `summary-card-title2` : `summary-card-title`}>{card.title}</div>
               <h3 className="summary-card-count">{card.count}</h3>
               <div className="summary-card-amount-container">
                 <div className="summary-card-amount-label">Amount</div>

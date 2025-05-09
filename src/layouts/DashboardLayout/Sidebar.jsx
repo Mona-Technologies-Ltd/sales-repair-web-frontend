@@ -153,6 +153,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
           </div>
           <Button
             type="text"
+            
             icon={
               <Icon
                 icon={collapsed ? "mdi:chevron-right" : "mdi:chevron-left"}
@@ -185,6 +186,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
                 transform: "translateY(-50%) scale(1.05)",
               },
             }}
+
+          
           />
         </div>
         <Menu
@@ -206,6 +209,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
             },
           ]}
         />
+        
       </Sider>
     </>
   );

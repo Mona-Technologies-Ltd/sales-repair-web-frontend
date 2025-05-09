@@ -18,7 +18,9 @@
   color: white;
   border: none;
 }
-
+.b_bracnch_img{
+  width: 4rem;
+}
 .edit-button:hover {
   background-color: #2a8fd8;
 }
@@ -32,4 +34,9 @@
 
 .close-account-button:hover {
   background-color: #fff1f1;
+}
+
+#info-right{
+  width: 26%;
+  margin-right: 16rem;
 }

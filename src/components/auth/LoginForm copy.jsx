@@ -1,13 +1,23 @@
-import React, { useState } from "react";
-import { Form, Button, message } from "antd";
+import React, { useEffect, useState } from "react";
+import { Form, Button } from "antd";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import IconInput from "../common/IconInput";
+
 import { loginSchema } from "../../utils/validationSchemas";
+import { login, resetAuthState } from "../../redux/slices/authSlice";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { isLoading, isSuccess, isError, message, isAuthenticated } =
+    useSelector((state) => state.auth);
+
+  const from = location.state?.from?.pathname || "/dashboard";
 
   const formik = useFormik({
     initialValues: {
@@ -16,18 +26,20 @@ const LoginForm = () => {
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      console.log("Form submitted successfully:", values);
-      message.success("Login successful!");
-      // navigate("/dashboard");
-
-      setTimeout(() => navigate("/dashboard"), 1000); // Redirect after 1 second
-    }
-    
-    // onSubmit: (values) => {
-    //   console.log("Skipping backend. Values:", values);
-    //   navigate("/");
-    // },
+      // dispatch(login(values));
+      console.log(values)
+      navigate('/')
+    },
   });
+
+  // useEffect(() => {
+  //   if (isAuthenticated && isSuccess) {
+  //     navigate(from, { replace: true });
+  //   }
+  //   return () => {
+  //     dispatch(resetAuthState());
+  //   };
+  // }, [isAuthenticated, isSuccess, navigate, dispatch, from]);
 
   return (
     <div className="auth-form">
@@ -82,9 +94,13 @@ const LoginForm = () => {
             showCircle={true}
           />
         </Form.Item>
-
         <Form.Item>
-          <Button type="primary" className="btn-color" htmlType="submit">
+          <Button
+            type="primary"
+            className="btn-color"
+            htmlType="submit"
+            loading={isLoading}
+          >
             Login
           </Button>
         </Form.Item>

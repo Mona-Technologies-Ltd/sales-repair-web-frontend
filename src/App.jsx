@@ -58,9 +58,10 @@ const App = () => {
           {/* Dashboard Routes */}
           <Route
             element={
-              <ProtectedRoute>
-                <DashboardLayout />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+               
+              // </ProtectedRoute>
+              <DashboardLayout />
             }
           >
             <Route path="/dashboard" element={<DashboardPage />} />

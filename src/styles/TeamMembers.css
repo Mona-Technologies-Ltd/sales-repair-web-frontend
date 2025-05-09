@@ -48,7 +48,7 @@
 }
 
 .member-card {
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -60,7 +60,7 @@
 }
 
 .member-header {
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .member-info {
@@ -106,19 +106,30 @@
 }
 
 .view-profile {
-  color: #0066cc;
+  color: #004AAD;
   text-decoration: none;
   font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
+.circle_team{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 
+}
 .member-stats {
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  /* border-top: 1px solid #e0e0e0; */
+  /* border-bottom: 1px solid #e0e0e0; */
   padding: 1rem 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .stats-row {
@@ -133,17 +144,18 @@
   flex-direction: column;
   gap: 0.25rem;
   flex: 1;
-  min-width: 150px;
+  width: 50%;
 }
 
 .stat-item-blue {
-  background-color: rgba(215, 240, 255, 0.35);
+  background-color: #D7F0FF59;
   padding: 10px;
   border-radius: 4px;
 }
 
 .stat-item-light-blue {
-  background-color: rgba(232, 242, 255, 0.35);
+  background-color: #E8F2FF59;
+
   padding: 10px;
   border-radius: 4px;
 }
@@ -157,7 +169,7 @@
 }
 
 .stat-amount {
-  font-weight: 500;
+  font-weight: 300;
   white-space: nowrap;
 }
 

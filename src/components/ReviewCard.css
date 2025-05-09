@@ -1,0 +1,122 @@
+.review-card {
+    position: relative;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 600px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* .review-card__corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, transparent 50%, #3b82f6 50%), 
+                linear-gradient(135deg, transparent 45%, #1e40af 45%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-top-right-radius: 8px;
+  } */
+  .review-card__corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+}
+
+.review-card__corner::before,
+.review-card__corner::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  transform: rotate(45deg);
+  transform-origin: top right;
+}
+
+.review-card__corner::before {
+  background-color: #38B6FF; /* Light Blue */
+  top: 40px;
+  right: -20px;
+}
+
+.review-card__corner::after {
+  background-color: #004AAD; /* Deep Blue */
+  top: 50px;
+  right: -12px;
+}
+
+  .review-card__content {
+    flex: 1;
+    padding-right: 60px;
+  }
+  
+  .review-card__name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .review-card__claim {
+    margin: 0;
+  }
+  
+  .review-card__claim-link {
+    color: #1d4ed8;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .review-card__tag {
+    margin: 12px 0;
+    font-size: 14px;
+    background-color: #dbeafe !important;
+    color: #2563eb !important;
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+  
+  .review-card__text {
+    font-family: monospace;
+    font-size: 14px;
+    margin-bottom: 12px;
+    width: 12rem;
+  }
+  
+  .review-card__stars {
+    margin-bottom: 8px;
+  }
+  
+  .review-card__time {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .review-card__rating-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #f0fdf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+  }
+  
+  .review-card__rating-text {
+    color: #4d7c0f;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  

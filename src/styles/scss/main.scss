@@ -40,7 +40,7 @@ body {
 .ant-input-affix-wrapper,
 .ant-checkbox-inner,
 .ant-radio-inner,
-button,
+// button,
 input,
 textarea,
 select {
@@ -355,9 +355,14 @@ select {
           }
 
           &.paid {
-            background-color: #e8f8f0;
-            color: #00b871;
+            background-color: #E0FFED;
+            color: #00752F;
           }
+          &.pending {
+            background-color: #e8f8f0;
+            color: #d0226d;
+          }
+          
         }
       }
     }

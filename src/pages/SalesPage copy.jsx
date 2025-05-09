@@ -10,12 +10,11 @@ const SalesPage = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
   const [dateRange, setDateRange] = useState([null, null]);
   const [currentPage, setCurrentPage] = useState(1);
-  // const currentPageData = allData.slice(startIndex, endIndex);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState(null);
   const pageSize = 10;
   const statuses = ["Paid", "Pending"];
-  const [searchQuery, setSearchQuery] = useState("");
+ 
   
   // Generate 50 items of sample data
   const allData = Array(45)
@@ -24,7 +23,7 @@ const SalesPage = () => {
       id: index + 1,
       deviceId: `IP${12567 + index}`,
       deviceModel: "iPhone 13 Pro MAX",
-      brand: `Iphone ${index}`,
+      brand: "Iphone",
       commission: "382,809",
       // status: index % 3 === 0 ? "Awaiting" : "Paid" || "Pending" ,
       status: statuses[index % 2],
@@ -38,26 +37,18 @@ const SalesPage = () => {
     }));
 
   // Calculate total items from the actual data
-  // const totalItems = allData.length;
+  const totalItems = allData.length;
 
   // Calculate the current page's data
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  // const currentPageData = allData.slice(startIndex, endIndex);
-  // const currentPageData = allData.slice(startIndex, endIndex);
+  const currentPageData = allData.slice(startIndex, endIndex);
 
   const handleViewDetails = (record) => {
     setSelectedDevice(record);
     setIsModalOpen(true);
   };
-  const filteredData = allData.filter((item) =>
-    Object.values(item).some((value) =>
-      String(value).toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
-  const totalItems = filteredData.length;
-  const currentPageData = filteredData.slice(startIndex, endIndex);
-  
+
   const generateReportData = () => {
     return {
       reportId: "RPT" + Date.now(),
@@ -147,14 +138,13 @@ const SalesPage = () => {
     <div className="sales-page">
       <div className="sales-page-header">
         <div className="search-filters">
-        <Input
-          placeholder="Search here"
-          prefix={<Icon icon="material-symbols:search" width="20" height="20" />}
-          className="search-input"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-
+          <Input
+            placeholder="Search here"
+            prefix={
+              <Icon icon="material-symbols:search" width="20" height="20" />
+            }
+            className="search-input"
+          />
           {/* <Select
             placeholder="Status"
             className="status-select"

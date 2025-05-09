@@ -1,0 +1,130 @@
+.repair-stats-container {
+    padding: 16px;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    /* margin-left: 13px; */
+  }
+  
+  .top-row {
+    margin-bottom: 20px;
+  }
+  
+  .stats-title {
+    font-size: 14px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  
+  .stats-value {
+    font-size: 32px;
+    font-weight: 400;
+    color: #0a0a0a;
+  }
+  
+  .stats-percentage {
+    text-align: right;
+  }
+  
+  .percentage-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: #FF0000;
+    font-weight: 400;
+    background: #FFF0F0;
+    gap: 3px;
+  }
+  
+  .down-icon {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+  
+  .month-label {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 2px;
+  }
+  
+  .bottom-row {
+    display: flex;
+    gap: 12px;
+  }
+  .payout-container {
+    background-color: #ffffff;
+    padding: 10px;
+    max-width: 1200px; /* Increase max width as needed */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .payout-box {
+    background-color: #E8F2FF59;
+    padding: 8px;
+    flex: 1;
+    /* border-radius: 4px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .left-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #D7F0FF59;
+  }
+  .p-c-l{
+
+  }
+  #payout-title-repair {
+    /* font-size: 14px; */
+    /* color: #1a1a1a; */
+    /* background: red; */
+    /* font-family: DM Sans; */
+font-weight: 400;
+font-size: 13px;
+line-height: 100%;
+letter-spacing: 0%;
+margin-bottom: 10px;
+
+  }
+  
+  .payout-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: #D7F0FF59; */
+  }
+  
+  .payout-number {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    /* margin-top: 4px; */
+  }
+  
+  .amount-box {
+    background-color: #24b8ff;
+    color: white;
+    padding: 2px 5px;
+    /* border-radius: 2px; */
+    /* min-width: 100px; */
+    text-align: center;
+  }
+  
+  .amount-label {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  
+  .amount-value {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .right-box {
+    margin-left: 4px;
+    background: #E8F2FF59;
+  }
+  

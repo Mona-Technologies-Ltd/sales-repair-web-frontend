@@ -26,10 +26,12 @@
 .search-input {
   width: 300px;
   height: 45px;
+  background: #E8F2FF59;
+  border: 1px solid #DBEBFF;
 }
 
 .status-select {
-  width: 200px;
+  width: 10rem !important;
 }
 
 .date-print-section {
@@ -80,6 +82,26 @@
   border: 1px solid #e6e8eb;
   padding: 24px;
 }
+.status-badge.pending {
+  background-color: #FFB82E26;
+  color: #FFB82E;
+}
+
+.status-badge.completed {
+  background-color: #E0FFED;
+  color: white;
+}
+
+.status-badge.failed {
+  background-color: red;
+  color: white;
+}
+.status-badge.paid {
+  background-color: #E0FFED !important;
+  color: #00752F !important;
+}
+
+
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 1200px) {
@@ -145,6 +167,23 @@
   .grid-container {
     padding: 16px;
   }
+}
+.commission {
+  background-color: #E8F2FF59; /* Light green background */
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.date{
+  background-color: #D7F0FF59; /* Light green background */
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+/* Try this more specific selector */
+.search-input input::placeholder {
+  color: #8A8894 !important;
+  font-weight: normal !important;
 }
 
 @media screen and (max-width: 480px) {

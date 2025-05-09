@@ -142,10 +142,11 @@ const BankInformation = () => {
             <div className="bank-details">
               <div className="account-number">{bank.accountNumber}</div>
               <div className="account-name">{bank.accountName}</div>
-              <div className="bank-name">{bank.bankName}</div>
+              <div className="">{bank.bankName}</div>
+              {/* <div className="bank-name">{bank.bankName}</div> */}
             </div>
             <div className="bank-actions">
-              <button
+              {/* <button
                 className="action-button copy"
                 onClick={() => handleCopy(bank.accountNumber)}
                 style={{
@@ -160,14 +161,15 @@ const BankInformation = () => {
                   height="20"
                   color="#38B6FF"
                 />
-              </button>
+              </button> */}
               <button
                 className="action-button delete"
                 onClick={() => handleDelete(bank.id)}
                 style={{
+                  
                   color: "#ff4d4f",
                   border: "1px solid #ff4d4f",
-                  borderRadius: "50%",
+                  borderRadius: "100%",
                   padding: "4px",
                 }}
               >

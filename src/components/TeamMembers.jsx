@@ -1,3 +1,7 @@
+import { HiOutlinePhone } from "react-icons/hi"; 
+import { IoMailOutline } from "react-icons/io5"; 
+import { IoMdMail } from "react-icons/io"; 
+import { BiPhone } from "react-icons/bi"; 
 import React, { useState } from "react";
 import { Input, DatePicker } from "antd";
 import { Icon } from "@iconify/react";
@@ -184,8 +188,12 @@ const TeamMembers = () => {
       </div>
 
       <div className="team-members-grid">
-        {teamMembers.map((member) => (
-          <div key={member.id} className="member-card">
+  {teamMembers
+    .filter((member) =>
+      member.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .map((member) => (
+      <div key={member.id} className="member-card">
             <div className="member-header">
               <div className="member-info">
                 <img
@@ -205,7 +213,7 @@ const TeamMembers = () => {
                     className="view-profile"
                   >
                     View profile{" "}
-                    <Icon icon="mdi:arrow-right" width="14" height="14" />
+                    {/* <Icon icon="mdi:arrow-right" width="14" height="14" /> */}
                   </Link>
                 </div>
               </div>
@@ -217,7 +225,7 @@ const TeamMembers = () => {
                   <span className="stat-label">
                     Plans Sold : {member.plansSold}
                   </span>
-                  <span className="stat-amount sales">
+                  <span className="stat-amount">
                     Amount ₦{member.amount}
                   </span>
                 </div>
@@ -225,7 +233,7 @@ const TeamMembers = () => {
                   <span className="stat-label">
                     Claims Processed : {member.claimsProcessed}
                   </span>
-                  <span className="stat-amount commission">
+                  <span className="stat-amount">
                     Commission ₦{member.commissionEarned}
                   </span>
                 </div>
@@ -234,21 +242,31 @@ const TeamMembers = () => {
 
             <div className="member-contact">
               <div className="contact-item">
-                <Icon
+                {/* <Icon
                   icon="material-symbols:phone-enabled-outline"
                   width="16"
                   height="16"
                   color="#1890ff"
-                />
+                /> */}
+                <span className="circle_team">
+                <HiOutlinePhone color="#004AAD" size={16} />
+                </span>
+                
+                {/* <BiPhone  color="#004AAD" size={23} /> */}
                 <span>{member.phone}</span>
               </div>
               <div className="contact-item">
-                <Icon
+
+                {/* <Icon
                   icon="material-symbols:mail-outline"
                   width="16"
                   height="16"
                   color="#1890ff"
-                />
+                /> */}
+                <span className="circle_team">
+                <IoMailOutline color="#004AAD" size={16} />
+                </span>
+                {/* <IoMdMail color="#004AAD" size={23} /> */}
                 <span>{member.email}</span>
               </div>
             </div>
