@@ -1,8 +1,10 @@
 .button-container {
-  display: flex;
-  justify-content: flex-start;
   gap: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  /* background: #000; */
+  display: flex;
+  justify-content: end;
+  position: relative;
 }
 
 .edit-button,
@@ -11,6 +13,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 180px;
+  position: absolute;
+  right: 0;
+  top: 3px;
 }
 
 .edit-button {

@@ -119,13 +119,13 @@ const BusinessInformation = () => {
           <button type="button" className="edit-button">
             Edit
           </button>
-          <button
+          {/* <button
             type="button"
             className="close-account-button"
             onClick={handleCloseAccount}
           >
             Close Account
-          </button>
+          </button> */}
         </div>
       </div>
 
