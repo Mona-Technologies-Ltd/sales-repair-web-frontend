@@ -218,9 +218,20 @@ const RepairsPage = () => {
                   height="15"
                 />
               </div>
-              <div className={card.title == 'Paid Repairs'  || card.title == 'Rejected Repairs' || card.title == 'Approved for Repair' || card.title == 'Completed Repairs' ? `summary-card-title2` : `summary-card-title`}>{card.title}</div>
+              {/* <div className={`summary-card-title ${card.title == 'Paid Repairs'  || card.title == 'Rejected Repairs' || card.title == 'Completed Repairs' ? `summary-card-title2` : `summary-card-title1`}`}>{card.title}</div> */}
+              <div className={`summary-card-title ${
+                  card.title === 'Paid Repairs' || card.title === 'Rejected Repairs' || card.title === 'Completed Repairs'
+                    ? 'summary-card-title2'
+                    : card.title === 'Approved for Repair'
+                      ? 'repairs_title_card'
+                      : 'summary-card-title1'
+                }`} id={card.title === 'Approved for Repair' ? 'repairs_title_card' : ''}>
+                {card.title}
+            </div>  
+
               <h3 className="summary-card-count">{card.count}</h3>
               <div className="summary-card-amount-container">
+              {/* card.title == 'Approved for Repair' */}
                 <div className="summary-card-amount-label">Amount</div>
                 <span className="summary-card-amount">₦{card.amount}</span>
               </div>

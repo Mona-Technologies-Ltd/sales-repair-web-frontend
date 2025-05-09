@@ -42,11 +42,24 @@
   align-self: flex-start;
 }
 .summary-card-title2 {
-  width: 40%;font-size: 14px;
+  width: 100%;font-size: 14px;
   color: #666;
   margin-bottom: 8px;
   align-self: flex-start;
 }
+#repairs_title_card{
+  width: 100%;font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  align-self: flex-start;  
+}
+/* .summary-card-title1{
+  width: 90%;font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  align-self: flex-start;
+} */
+
 .summary-card-count {
   font-size: 24px;
   font-weight: 600;
