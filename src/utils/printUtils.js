@@ -547,12 +547,16 @@ export const printRepairsReport = (reportData) => {
 .repairs-info thead {
   background-color: #f5f5f5;
 }
+  .status{
+    width:80px;
+    text-align:center;
+    }
 
     .status-paid {
       background-color: #E0FFED;
       color: #00752F;
       padding: 5px 10px;
-      border-radius: 4px;
+   
       display: inline-block;
     }
 
@@ -560,7 +564,7 @@ export const printRepairsReport = (reportData) => {
       background-color: #FFB82E26;
       color: #FFB82E;
       padding: 5px 10px;
-      border-radius: 4px;
+     
       display: inline-block;
     }
 
@@ -690,7 +694,7 @@ export const printRepairsReport = (reportData) => {
             <td>Samsung</td>
             <td>Galaxy S20</td>
             <td>#123,345</td>
-            <td><span class="status-paid">Paid</span></td>
+            <td><span class="status status-paid">Paid</span></td>
             <td>Admin 1</td>
             <td>2025-01-15</td>
           </tr>
@@ -699,7 +703,7 @@ export const printRepairsReport = (reportData) => {
             <td>Samsung</td>
             <td>Galaxy S20</td>
             <td>#123,345</td>
-            <td><span class="status-pending">Pending</span></td>
+            <td><span class="status status-pending">Pending</span></td>
             <td>Admin 1</td>
             <td>2025-01-15</td>
           </tr>

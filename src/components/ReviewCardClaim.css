@@ -1,0 +1,106 @@
+.review-card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.review-content {
+  flex: 1 1 300px;
+}
+
+.review-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #202020;
+}
+
+.review-text {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+.star {
+  color: #e0e0e0;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.review-score-container {
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-circle {
+  background-color: #f3ffe6;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  color: #63a30f;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/* Corner Stripe */
+.corner-stripes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background-image: linear-gradient(135deg, #2d91f2 20%, #1e5bbc 40%, white 40%);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .review-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-score-container {
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+
+  .corner-stripes {
+    width: 80px;
+    height: 80px;
+  }
+}

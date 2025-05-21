@@ -51,15 +51,23 @@ const TeamMemberProfile = () => {
             <div className="profile-details">
               <h2>{teamMember.name}</h2>
               <div className="info-item">
-                <MailOutlined />
+                <span className="circle_m">
+                  <MailOutlined />
+                </span>
                 <span>{teamMember.email}</span>
               </div>
               <div className="info-item">
-                <PhoneOutlined />
+                 <span className="circle_m">
+                   <PhoneOutlined />
+                 </span>
+               
                 <span>{teamMember.phone}</span>
               </div>
               <div className="info-item">
-                <CalendarOutlined />
+                <span className="circle_m">
+                  <CalendarOutlined />
+                </span>
+                
                 <span>Joined: {teamMember.joinDate}</span>
               </div>
             </div>

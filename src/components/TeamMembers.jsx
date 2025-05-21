@@ -196,11 +196,11 @@ const TeamMembers = () => {
       <div key={member.id} className="member-card">
             <div className="member-header">
               <div className="member-info">
-                <img
-                  src={member.avatar}
-                  alt={member.name}
-                  className="member-avatar"
-                />
+                <div className="member-avatar">
+                  {member.name[0]}
+                </div>
+                
+
                 <div className="member-details">
                   <h3 className="member-name">{member.name}</h3>
                   <div className="member-location">
@@ -213,7 +213,6 @@ const TeamMembers = () => {
                     className="view-profile"
                   >
                     View profile{" "}
-                    {/* <Icon icon="mdi:arrow-right" width="14" height="14" /> */}
                   </Link>
                 </div>
               </div>
