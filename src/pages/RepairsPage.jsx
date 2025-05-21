@@ -5,6 +5,7 @@ import CustomGrid from "../components/CustomGrid/CustomGrid";
 import RepairDetailsModal from "../components/RepairDetailsModal/RepairDetailsModal";
 import { printRepairsReport } from "../utils/printUtils";
 import "./RepairsPage.css";
+import DeviceModal from "../components/RepairDetailsModal/DeviceModal";
 
 const RepairsPage = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
@@ -294,11 +295,12 @@ const RepairsPage = () => {
       />
 
       {/* Modal */}
-      <RepairDetailsModal
+      <DeviceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         deviceData={selectedDevice}
       />
+      {/* <DeviceModal /> */}
     </div>
   );
 };
