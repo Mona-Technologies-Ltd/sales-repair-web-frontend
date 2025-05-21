@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "antd";
 import { Icon } from "@iconify/react";
 import PropTypes from "prop-types";
-// import "./DeviceDetailsModal.scss";
+import "./DeviceDetailsModal.css";
 
 const DeviceDetailsModal = ({ isOpen, onClose, deviceData }) => {
   return (
@@ -81,7 +81,7 @@ const DeviceDetailsModal = ({ isOpen, onClose, deviceData }) => {
           </div>
           <div className="payment-row">
             <span>Commission</span>
-            <span className="commission" style={{ fontSize: "20px" }}>
+            <span className="commission" style={{ fontSize: "20px", color:"#004AAD" }}>
               ₦{deviceData?.commission || "382,809"}
             </span>
           </div>
@@ -93,6 +93,7 @@ const DeviceDetailsModal = ({ isOpen, onClose, deviceData }) => {
               ).toLowerCase()}`}
             >
               {deviceData?.status}
+             
             </span>
           </div>
         </div>

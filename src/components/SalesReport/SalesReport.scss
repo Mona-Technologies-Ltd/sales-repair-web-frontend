@@ -119,12 +119,12 @@
         font-size: 14px;
 
         &.paid {
-          background-color: #e8f5e9;
+          background-color: #E0FFED;
           color: #2e7d32;
         }
 
-        &.awaiting {
-          background-color: #fff3e0;
+        &.pending {
+          background-color: #FFB82E26;
           color: #f57c00;
         }
       }
