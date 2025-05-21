@@ -65,7 +65,7 @@ const repairHistory = [
             </Typography>
             <Typography
               sx={{
-                backgroundColor: "#E6F7FF",
+                backgroundColor: "#F1FAFF",
                 color: "#00B2FF",
                 width: "fit-content",
                 px: 1.5,
@@ -166,7 +166,7 @@ const repairHistory = [
           xs: "100%",  // 100% width on mobile
           sm: "31%",   // ~1/3 width on tablets and up
         },
-        background: "#F7F9FC",
+        background: "#DEE7FF59",
         p: 2,
         // borderRadius: 2,
         textAlign: "center",
@@ -186,14 +186,14 @@ const repairHistory = [
 
 
         {/* Issues */}
-        <Box mt={3} bgcolor="#DEE7FF59" p={2} borderRadius={2}>
+        <Box mt={3} bgcolor="#DEE7FF59" p={2} borderRadius={0}>
           <Typography fontWeight={600} textAlign={'center'}>Issue(s)</Typography>
           <Box mt={1} display="flex" justifyContent={'center'} gap={1} flexWrap="wrap">
             {issues.map((issue) => (
               <Chip
                 key={issue}
                 label={issue}
-                sx={{ backgroundColor: "#DEE7FF59", color: "#00B2FF", borderRadius:0 }}
+                sx={{ backgroundColor: "#E6F0FA", color: "#38B6FF", borderRadius:0 }}
               />
             ))}
           </Box>
@@ -206,14 +206,16 @@ const repairHistory = [
   width="100%"
   justifyContent="center"
   flexWrap="wrap"
+  // bgcolor={'#97C4FF'}
 >
   <Box
     width={{ xs: '100%', sm: '50%' }}
     display="flex"
     justifyContent="center"
     mb={2}
+    // bgcolor={'#97C4FF'}
   >
-    <Card variant="outlined" sx={{ width: '90%', p: 3 }}>
+    <Card variant="outlined" sx={{ width: '90%', p: 3, bgcolor:'#F3F8FF', borderBlockColor:'#97C4FF' }}>
       <Typography variant="body2" color="text.secondary">
         Team member
       </Typography>
@@ -228,7 +230,7 @@ const repairHistory = [
     justifyContent="center"
     mb={2}
   >
-    <Card variant="outlined" sx={{ width: '90%', p: 3 }}>
+    <Card variant="outlined" sx={{ width: '90%', p: 3,  bgcolor:'#F3F8FF', borderBlockColor:'#97C4FF'}}>
       <Typography variant="body2" color="text.secondary">
         Customer Info
       </Typography>
@@ -282,19 +284,19 @@ const repairHistory = [
         {/* General Description */}
         <Box mt={4}>
           <Typography fontWeight={600}>General Description</Typography>
-          <Box mt={1} bgcolor="#E6F7FF" p={2} borderRadius={2}>
+          <Box mt={1} bgcolor="#DBEBFF59" p={2} borderRadius={2}>
             <Typography fontWeight={600}>When</Typography>
             <Typography variant="body2" color="text.secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Box>
-          <Box mt={1} bgcolor="#E6F7FF" p={2} borderRadius={2}>
+          <Box mt={1} bgcolor="#DBEBFF59" p={2} borderRadius={2}>
             <Typography fontWeight={600}>Where</Typography>
             <Typography variant="body2" color="text.secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Box>
-          <Box mt={1} bgcolor="#E6F7FF" p={2} borderRadius={2}>
+          <Box mt={1} bgcolor="#DBEBFF59" p={2} borderRadius={2}>
             <Typography fontWeight={600}>How</Typography>
             <Typography variant="body2" color="text.secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
